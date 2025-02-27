@@ -1,6 +1,6 @@
 .data
 Header:	.space 56
-Path:	.asciz "C:\\ProjektRISCV\\example.bmp"
+Path:	.asciz "C:\\ProjektRISCV\\example.bmp" # write here path to existing bmp file on your disk
 Error:	.asciz "Error with opening BMP File"
 Error2:	.asciz "Error with writing to BMP File"
 Entera:	.asciz "Enter coefficient a (not equal to 0) of the quadratic function multiplied by 2^4: "
@@ -58,7 +58,7 @@ readbmp:
 	li t2, 0
 	li t3, 0
 	li t4, 3
-	li t6, 0xff # t5 used to color pixel on white
+	li t6, 0xff # t6 used to color pixel on white
 	srai s7, s1, 1 # in s7 width/2
 	mul s7, s7, t4
 	add s8, s11, s7 #address of first pixel in axis OY in s8
@@ -162,7 +162,7 @@ onaxisY:
 	addi t1, t1, 1
 	b pixelrow
 
-#after drawin coordinate system------------------------------------------------------------------------------------
+#after drawing coordinate system------------------------------------------------------------------------------------
 calcvertex:
 #calculating the vertex of the function
 	li t0, 0
